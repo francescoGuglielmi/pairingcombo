@@ -1,67 +1,38 @@
-<script>
-  import AuthButton from "./AuthButton.vue";
-  import AboutText from "./AboutText.vue";
+<script lang="ts">
+import AuthButton from "./AuthButton.vue";
 
-  export default {
-    components: {
-      AuthButton,
-      AboutText
-    },
-    data() {
-      return {
-        login: 'login',
-        signup: 'signup',
-        showText: false,
-      };
-    },
-    mounted() {
-      setTimeout(() => {
-        this.showText = true;
-      }, 200);
-    }
-  };
+export default {
+  components: {
+    AuthButton,
+  },
+};
 </script>
 
 <template>
   <div class="background"></div>
   <div class="sidebar"></div>
-  <h1>Pairing Combo</h1>
+  <router-link to="/" class="logo">
+    <h1>Pairing Combo</h1>
+  </router-link>
   <div class="buttons-container">
-    <AuthButton :functionality="login"/>
-    <AuthButton :functionality="signup"/>
+    <AuthButton :authButtonFunctionality="'login'" />
+    <AuthButton :authButtonFunctionality="'signup'" /> 
   </div>
-  <div class="text-container" :class="{ 'show': showText }">
-    <AboutText />
-  </div>
-
 </template>
 
 <style scoped>
-  h1 {
-    font-family: Honk;
-    font-size: 3vw;
-    position: fixed;
-    width: 30px;
-    line-height: 1em;
-    margin: 3vw;
-  }
-
-  a {
-    color: white;
-    position: fixed;
+  .logo {
+    text-decoration: none;
     font-size: 1.5vw;
-    font-family: Ubuntu;
-    left: 4.3vw;
     cursor: pointer;
-    &:first-of-type {
-      top: 30%;
-    }
-    &:nth-of-type(2) {
-      top: 45%;
-    }
-    &:nth-of-type(3) {
-      top: 60%;
-      left: 5.8vw;
+    position: fixed;
+    left: 3vw;
+    width: 100px;
+    top: 5%;
+    h1 {
+      font-family: Honk;
+      font-size: 3vw;
+      line-height: 1em;
     }
   }
 
@@ -87,43 +58,10 @@
     height: 40px;
     gap: 10px;
   }
-
-  .text-container {
-    font-family: Ubuntu;
-    color: white;
-    opacity: 0;
-    width: 70%;
-    height: 30%;
-    position: absolute;
-    left: 18vw;
-    top: 12vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    transform: translateY(15%);
-    transition: opacity 1s, transform 1s;
-  }
-
-  .show {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    70% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
+  
   @media (max-width: 600px) {
     h1 {
       font-size: 5vw;
     }
   }
-</style>
+  </style>
