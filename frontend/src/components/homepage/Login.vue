@@ -19,6 +19,8 @@ export default defineComponent({
 
     return {
       showText,
+      email,
+      password
     };
   }
 });
@@ -28,8 +30,8 @@ export default defineComponent({
   <div class="slide-up" :class="{ 'show': showText }">
     <h1>Log In</h1>
     <form>
-      <FormInput inputFunctionality="email" />
-      <FormInput inputFunctionality="password" />
+      <FormInput inputFunctionality="email" v-model="email"/>
+      <FormInput inputFunctionality="password" v-model="password"/>
       <button type="submit">Log In</button>
     </form>
   </div>

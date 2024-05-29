@@ -30,7 +30,7 @@ export default {
 
       <div class="reason">
         <div class="box">
-          <img src="../assets/blocks-icon.png" width="80px"/>
+          <img src="../../assets/blocks-icon.png" width="80px"/>
         </div>
         <div class="card">
           <h3>Easy To Use</h3>
@@ -40,7 +40,7 @@ export default {
 
       <div class="reason">
         <div class="box">
-          <img src="../assets/clock-icon.png" width="80px"/>
+          <img src="../../assets/clock-icon.png" width="80px"/>
         </div>
         <div class="card">
           <h3>Save Time</h3>
@@ -50,7 +50,7 @@ export default {
 
       <div class="reason">
         <div class="box">
-          <img src="../assets/code-icon.png" width="80px"/>
+          <img src="../../assets/code-icon.png" width="80px"/>
         </div>
         <div class="card">
           <h3>Built For Developers</h3>

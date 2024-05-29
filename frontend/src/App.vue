@@ -3,13 +3,13 @@
 
 <template>
   <router-view name="component" />
-  <div class="text-container">
+  <div class="modal-container" data-testid="modal-container">
     <router-view name="modal" />
   </div>
 </template>
 
 <style scoped>
-  .text-container {
+  .modal-container {
     font-family: Ubuntu;
     color: white;
     width: 70%;

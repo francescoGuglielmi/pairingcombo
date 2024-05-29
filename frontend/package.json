@@ -6,14 +6,19 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "cy:open": "npx cypress open"
   },
   "dependencies": {
     "vue": "^3.4.21",
     "vue-router": "^4.0.13"
   },
   "devDependencies": {
+    "@testing-library/cypress": "^10.0.1",
+    "@testing-library/vue": "^8.1.0",
+    "@types/node": "^20.12.12",
     "@vitejs/plugin-vue": "^5.0.4",
+    "cypress": "^13.10.0",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "vue-tsc": "^2.0.6"

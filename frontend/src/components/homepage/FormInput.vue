@@ -1,7 +1,9 @@
 <script>
   export default {
     props: {
-      inputFunctionality: 'email' | 'password'
+      inputFunctionality: 'email' | 'password',
+      email: String,
+      password: String
     }
   }
 </script>
