@@ -1,9 +1,9 @@
-<script>
-import { ref, onMounted } from 'vue';
+<script lang="ts">
+import { ref, type Ref, onMounted } from 'vue';
 
 export default {
   setup() {
-    const showText = ref(false);
+    const showText: Ref<boolean> = ref(false);
 
     onMounted(() => {
       setTimeout(() => {

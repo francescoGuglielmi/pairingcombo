@@ -1,10 +1,10 @@
-<script>
+<script lang="ts">
   export default {
     props: {
       inputFunctionality: {
         type: String,
         required: true,
-        validator: value => ['email', 'password'].includes(value)
+        validator: (value: string) => ['email', 'password'].includes(value)
       },
       email: String,
       password: String

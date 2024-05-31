@@ -1,5 +1,5 @@
 <script lang="ts">
-import { ref, onMounted, defineComponent } from 'vue';
+import { ref, type Ref, onMounted, defineComponent } from 'vue';
 import FormInput from './FormInput.vue';
 
 export default defineComponent({
@@ -7,9 +7,9 @@ export default defineComponent({
     FormInput,
   },
   setup() {
-    const showText = ref(false);
-    const email = ref('');
-    const password = ref('');
+    const showText: Ref<boolean> = ref(false);
+    const email: Ref<string> = ref('');
+    const password: Ref<string> = ref('');
 
     onMounted(() => {
       setTimeout(() => {
