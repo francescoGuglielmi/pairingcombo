@@ -4,8 +4,10 @@ import { createRouter, createMemoryHistory } from 'vue-router';
 
 const SignupComponent = { template: '<div>Signup Page</div>' };
 const LoginComponent = { template: '<div>Login Page</div>' };
+const HomePageComponent = { template: '<div>Home Page</div>' };
 
 const routes = [
+  { path: '/', component: HomePageComponent },
   { path: '/signup', component: SignupComponent },
   { path: '/login', component: LoginComponent }
 ];
@@ -23,11 +25,13 @@ describe('AuthButton', () => {
     
     describe(`when "${functionality}" is passed as a prop`, () => {
 
-      beforeEach(() => {
+      beforeEach( async () => {
         wrapper = mount(AuthButton, {
           props: { authButtonFunctionality: functionality },
           global: { plugins: [router] },
         });
+
+        await router.push('/');
       })
       
       it(`should render a ${functionality} button`, async () => {
@@ -37,7 +41,6 @@ describe('AuthButton', () => {
       })
       
       it(`should render a button that navigates to the ${functionality} form when "${functionality}" is passed as a prop`, async () => {
-        await router.push('/');
         
         await wrapper.find('button').trigger('click');
         await wrapper.vm.$nextTick(); 

@@ -1,7 +1,11 @@
 <script>
   export default {
     props: {
-      inputFunctionality: 'email' | 'password',
+      inputFunctionality: {
+        type: String,
+        required: true,
+        validator: value => ['email', 'password'].includes(value)
+      },
       email: String,
       password: String
     }

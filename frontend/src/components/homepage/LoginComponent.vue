@@ -1,5 +1,5 @@
 <script lang="ts">
-import { ref, onMounted, defineProps, defineComponent } from 'vue';
+import { ref, onMounted, defineComponent } from 'vue';
 import FormInput from './FormInput.vue';
 
 export default defineComponent({
@@ -28,11 +28,11 @@ export default defineComponent({
 
 <template>
   <div class="slide-up" :class="{ 'show': showText }">
-    <h1>Sign Up</h1>
+    <h1>Log In</h1>
     <form>
-      <FormInput inputFunctionality="email" :email="email"/>
-      <FormInput inputFunctionality="password" :password="password"/>
-      <button type="submit">Create Account</button>
+      <FormInput inputFunctionality="email" v-model="email"/>
+      <FormInput inputFunctionality="password" v-model="password"/>
+      <button type="submit">Log In</button>
     </form>
   </div>
 </template>
@@ -51,7 +51,7 @@ export default defineComponent({
     border: 1px solid white;
     background-color: rgb(94, 59, 145);
     color: white;
-    padding: 15px 87px;
+    padding: 15px 116px;
     cursor: pointer;
     font-family: Ubuntu;
     font-weight: 400;

@@ -4,9 +4,7 @@
       authButtonFunctionality: {
         type: String,
         required: true,
-        validator: (value: string) => {
-          return ['login', 'signup'].includes(value);
-        }
+        validator: (value: string) => ['login', 'signup'].includes(value)
       }
     },
     methods: {
