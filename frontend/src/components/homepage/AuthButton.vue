@@ -1,10 +1,16 @@
 <script lang="ts">
   export default {
     props: {
-      authButtonFunctionality: 'signup' | 'login' 
+      authButtonFunctionality: {
+        type: String,
+        required: true,
+        validator: (value: string) => {
+          return ['login', 'signup'].includes(value);
+        }
+      }
     },
     methods: {
-      goToAuth() {
+      goToAuth(): void {
         this.$router.push(`/${this.authButtonFunctionality}`)
       }
     }
