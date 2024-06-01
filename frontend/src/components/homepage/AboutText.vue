@@ -1,25 +1,24 @@
 <script lang="ts">
 import { ref, type Ref, onMounted } from 'vue';
+import { showText } from '../../utils/showText';
 
 export default {
   setup() {
-    const showText: Ref<boolean> = ref(false);
+    const isTextShowing: Ref<boolean> = ref(false);
 
     onMounted(() => {
-      setTimeout(() => {
-        showText.value = true;
-      }, 200);
+      showText(isTextShowing)
     });
 
     return {
-      showText,
+      isTextShowing,
     };
   }
 }
 </script>
 
 <template>
-  <div class="slide-up" :class="{ 'show': showText }">
+  <div class="slide-up" :class="{ 'show': isTextShowing }">
 
     <div class="headline">
       <h2>Pairing Made Easy</h2>

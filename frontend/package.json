@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "test:unit": "jest --env=jsdom --verbose"
+    "test:unit": "jest --env=jsdom --verbose",
+    "test:coverage": "jest --env=jsdom --coverage --coverageReporters=text"
   },
   "dependencies": {
     "vue": "^3.4.21",

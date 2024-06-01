@@ -9,17 +9,19 @@ describe('AboutText', () => {
     // HEADLINE
     const headline = await wrapper.find('div[class="headline"]');
 
-    expect(headline).toBeDefined;
+    expect(headline).toBeDefined();
     expect(headline.element.children[0].textContent).toEqual('Pairing Made Easy');
     expect(headline.element.children[1].textContent).toEqual('Manage pair rotations like a pro! Pairing Combo is the open source project that aims to help those developers that work using pair programming organise their rotation like no other tool.');
     
     // REASONS
-    const reasons = await wrapper.findAll('div[class="reason"]');
+    const reasons = await wrapper.find('div[class="reasons"]').element;
     
-    expect(reasons).toHaveLength(3);
-    for (let i = 0; i < reasons.length; i++) {
-      expect(reasons[i].element.children[0].className).toEqual('box');
-      expect(reasons[i].element.children[1].className).toEqual('card');
+    expect(reasons).toBeDefined();
+    expect(reasons.children).toHaveLength(3);
+
+    for (let i = 0; i < reasons.children.length; i++) {
+      expect(reasons.children[i].children[0].className).toEqual('box');
+      expect(reasons.children[i].children[1].className).toEqual('card');
     }
   })
 

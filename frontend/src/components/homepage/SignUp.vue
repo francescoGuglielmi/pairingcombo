@@ -1,24 +1,23 @@
 <script lang="ts">
 import { ref, type Ref, onMounted, defineComponent } from 'vue';
 import FormInput from './FormInput.vue';
+import { showText } from '../../utils/showText';
 
 export default defineComponent({
   components: {
     FormInput,
   },
   setup() {
-    const showText: Ref<boolean> = ref(false);
+    const isTextShowing: Ref<boolean> = ref(false);
     const email: Ref<string> = ref('');
     const password: Ref<string> = ref('');
 
     onMounted(() => {
-      setTimeout(() => {
-        showText.value = true;
-      }, 200);
+      showText(isTextShowing)
     });
 
     return {
-      showText,
+      isTextShowing,
       email,
       password
     };
@@ -27,12 +26,12 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="slide-up" :class="{ 'show': showText }">
-    <h1>Log In</h1>
+  <div class="slide-up" :class="{ 'show': isTextShowing }">
+    <h1>Sign Up</h1>
     <form>
-      <FormInput inputFunctionality="email" v-model="email"/>
-      <FormInput inputFunctionality="password" v-model="password"/>
-      <button type="submit">Log In</button>
+      <FormInput inputFunctionality="email" :email="email"/>
+      <FormInput inputFunctionality="password" :password="password"/>
+      <button type="submit">Create Account</button>
     </form>
   </div>
 </template>
@@ -51,7 +50,7 @@ export default defineComponent({
     border: 1px solid white;
     background-color: rgb(94, 59, 145);
     color: white;
-    padding: 15px 116px;
+    padding: 15px 87px;
     cursor: pointer;
     font-family: Ubuntu;
     font-weight: 400;

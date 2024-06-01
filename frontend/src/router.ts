@@ -1,30 +1,30 @@
 import { createMemoryHistory, createRouter } from "vue-router";
 
-import HomepageComponent from "./components/homepage/HomepageComponent.vue";
-import SignupComponent from "./components/homepage/SignupComponent.vue";
-import LoginComponent from "./components/homepage/LoginComponent.vue";
+import HomePage from "./components/homepage/HomePage.vue";
+import SignUp from "./components/homepage/SignUp.vue";
+import LogIn from "./components/homepage/LogIn.vue";
 import AboutText from "./components/homepage/AboutText.vue";
 
 const routes = [
   { 
     path: '/', 
     components: {
-      component: HomepageComponent,
+      component: HomePage,
       modal: AboutText,
     }
   },
   { 
     path: '/signup', 
     components: { 
-      component: HomepageComponent,
-      modal: SignupComponent,
+      component: HomePage,
+      modal: SignUp,
     }
   },
   { 
     path: '/login', 
     components: { 
-      component: HomepageComponent,
-      modal: LoginComponent,
+      component: HomePage,
+      modal: LogIn,
     }
   },
 ]
