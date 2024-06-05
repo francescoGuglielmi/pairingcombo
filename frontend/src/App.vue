@@ -4,7 +4,7 @@
 <template>
   <router-view name="component" />
   <div class="modal-container" data-testid="modal-container">
-    <router-view name="modal" />
+    <router-view name="modal" :key="$route.fullPath"/>
   </div>
 </template>
 

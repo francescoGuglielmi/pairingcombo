@@ -7,7 +7,13 @@ export default defineComponent({
   components: {
     FormInput,
   },
-  setup() {
+  props: {
+    formType: {
+      type: String,
+      required: true,
+    }
+  },
+  setup(props) {
     const isTextShowing: Ref<boolean> = ref(false);
     const email: Ref<string> = ref('');
     const password: Ref<string> = ref('');
@@ -19,7 +25,8 @@ export default defineComponent({
     return {
       isTextShowing,
       email,
-      password
+      password,
+      formType: props.formType
     };
   }
 });
@@ -27,11 +34,11 @@ export default defineComponent({
 
 <template>
   <div class="slide-up" :class="{ 'show': isTextShowing }">
-    <h1>Log In</h1>
+    <h1>{{ formType === 'signup' ? 'Sign Up' : "Log In" }}</h1>
     <form>
       <FormInput inputFunctionality="email" v-model="email"/>
       <FormInput inputFunctionality="password" v-model="password"/>
-      <button type="submit">Log In</button>
+      <button type="submit">{{ formType === 'signup' ? "Create Account" : "Authenticate" }}</button>
     </form>
   </div>
 </template>
@@ -43,14 +50,16 @@ export default defineComponent({
     align-items: center;
     justify-content: center;
     gap: 2em;
+    width: 100%;
   }
 
   button {
+    width: 270px;
     border-radius: 0.5em;
     border: 1px solid white;
     background-color: rgb(94, 59, 145);
     color: white;
-    padding: 15px 116px;
+    padding: 15px 50px;
     cursor: pointer;
     font-family: Ubuntu;
     font-weight: 400;

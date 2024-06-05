@@ -1,8 +1,7 @@
 import { createMemoryHistory, createRouter } from "vue-router";
 
 import HomePage from "./components/homepage/HomePage.vue";
-import SignUp from "./components/homepage/SignUp.vue";
-import LogIn from "./components/homepage/LogIn.vue";
+import AuthForm from "./components/homepage/AuthForm.vue";
 import AboutText from "./components/homepage/AboutText.vue";
 
 const routes = [
@@ -17,14 +16,22 @@ const routes = [
     path: '/signup', 
     components: { 
       component: HomePage,
-      modal: SignUp,
-    }
+      modal: AuthForm,
+    },
+    props: {
+      component: false,
+      modal: { formType: 'signup' },
+    },
   },
   { 
     path: '/login', 
     components: { 
       component: HomePage,
-      modal: LogIn,
+      modal: AuthForm,
+    },
+    props: {
+      component: false,
+      modal: { formType: 'login' },
     }
   },
 ]

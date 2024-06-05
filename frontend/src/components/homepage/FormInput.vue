@@ -1,16 +1,27 @@
 <script lang="ts">
-  export default {
+import { defineComponent } from 'vue'
+
+  export default defineComponent ({
     props: {
       inputFunctionality: {
         type: String,
         required: true,
         validator: (value: string) => ['email', 'password'].includes(value)
       },
-      email: String,
-      password: String
+      modelValue: String,
+    },
+    emits: ['update:modelValue'],
+    setup(_, {emit}) {
+      const handleInput = (event: Event) => {
+        emit('update:modelValue', (event.target as HTMLInputElement).value);
+      };
+      return {
+        handleInput
+      }
     }
-  }
+})
 </script>
+
 
 <template>
   <div :class="`${inputFunctionality}-field`">
@@ -20,6 +31,8 @@
       :name="inputFunctionality" 
       :id="inputFunctionality" 
       :placeholder="`Your ${inputFunctionality}`" 
+      :value="modelValue"
+      @input="handleInput"
       required
     />
   </div>
