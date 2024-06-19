@@ -1,0 +1,1 @@
+There should be a file called application.properties in this directory containing the details to connect to a database, however for security reasons it has been gitignored.
