@@ -1,10 +1,10 @@
-package com.pairingcombo.pairingcombo;
+package com.pairingcombo.backend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PairingcomboApplicationTests {
+class BackendApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,13 +1,13 @@
-package com.pairingcombo.pairingcombo;
+package com.pairingcombo.backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PairingcomboApplication {
+public class BackendApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PairingcomboApplication.class, args);
+		SpringApplication.run(BackendApplication.class, args);
 	}
 
 }
